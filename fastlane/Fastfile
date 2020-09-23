@@ -53,10 +53,6 @@ platform :ios do
       path: ENV["PROJECT_PATH"],
       teamid: ENV["TEAM_ID"]
     )
-
-    if ENV["EXPORT_OPTIONS"] != ""
-      export_options(ENV["EXPORT_OPTIONS"])
-    end
     
     if ENV["WORKSPACE_PATH"] != ""
       build_app(
@@ -66,7 +62,8 @@ platform :ios do
         output_directory: File.dirname(ENV["OUTPUT_PATH"]),
         output_name: File.basename(ENV["OUTPUT_PATH"]),
         clean: true,
-        export_method: ENV["EXPORT_METHOD"]
+        export_method: ENV["EXPORT_METHOD"],
+        export_options: ENV["EXPORT_OPTIONS"]
       )
     else
       build_app(
@@ -76,7 +73,8 @@ platform :ios do
         output_directory: File.dirname(ENV["OUTPUT_PATH"]),
         output_name: File.basename(ENV["OUTPUT_PATH"]),
         clean: true,
-        export_method: ENV["EXPORT_METHOD"]
+        export_method: ENV["EXPORT_METHOD"],
+        export_options: ENV["EXPORT_OPTIONS"]
       )
     end
     delete_keychain(
