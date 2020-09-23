@@ -54,31 +54,29 @@ platform :ios do
       teamid: ENV["TEAM_ID"]
     )
     
-  
-
-    # if ENV["WORKSPACE_PATH"] != ""
-    #   build_app(
-    #     workspace: ENV["WORKSPACE_PATH"],
-    #     configuration: ENV["CONFIGURATION"],
-    #     scheme: ENV["SCHEME"],
-    #     output_directory: File.dirname(ENV["OUTPUT_PATH"]),
-    #     output_name: File.basename(ENV["OUTPUT_PATH"]),
-    #     clean: true,
-    #     export_method: ENV["EXPORT_METHOD"],
-    #     export_options: ENV["EXPORT_OPTIONS"]
-    #   )
-    # else
-    #   build_app(
-    #     project: ENV["PROJECT_PATH"],
-    #     configuration: ENV["CONFIGURATION"],
-    #     scheme: ENV["SCHEME"],
-    #     output_directory: File.dirname(ENV["OUTPUT_PATH"]),
-    #     output_name: File.basename(ENV["OUTPUT_PATH"]),
-    #     clean: true,
-    #     export_method: ENV["EXPORT_METHOD"],
-    #     export_options: ENV["EXPORT_OPTIONS"]
-    #   )
-    # end
+    if ENV["WORKSPACE_PATH"] != ""
+      build_app(
+        workspace: ENV["WORKSPACE_PATH"],
+        configuration: ENV["CONFIGURATION"],
+        scheme: ENV["SCHEME"],
+        output_directory: File.dirname(ENV["OUTPUT_PATH"]),
+        output_name: File.basename(ENV["OUTPUT_PATH"]),
+        clean: true,
+        export_method: ENV["EXPORT_METHOD"],
+        export_options: ENV["EXPORT_OPTIONS"]
+      )
+    else
+      build_app(
+        project: ENV["PROJECT_PATH"],
+        configuration: ENV["CONFIGURATION"],
+        scheme: ENV["SCHEME"],
+        output_directory: File.dirname(ENV["OUTPUT_PATH"]),
+        output_name: File.basename(ENV["OUTPUT_PATH"]),
+        clean: true,
+        export_method: ENV["EXPORT_METHOD"],
+        export_options: ENV["EXPORT_OPTIONS"]
+      )
+    end
     delete_keychain(
       name: "ios-build.keychain"
     )
