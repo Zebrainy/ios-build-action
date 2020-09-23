@@ -56,6 +56,7 @@ platform :ios do
 
     if ENV["EXPORT_OPTIONS"] != ""
       export_options(ENV["EXPORT_OPTIONS"])
+    end
     
     if ENV["WORKSPACE_PATH"] != ""
       build_app(
