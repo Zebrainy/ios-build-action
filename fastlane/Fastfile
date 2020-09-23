@@ -53,6 +53,10 @@ platform :ios do
       path: ENV["PROJECT_PATH"],
       teamid: ENV["TEAM_ID"]
     )
+
+    if ENV["EXPORT_OPTIONS"] != ""
+    export_options(ENV["EXPORT_OPTIONS"])
+    
     if ENV["WORKSPACE_PATH"] != ""
       build_app(
         workspace: ENV["WORKSPACE_PATH"],
