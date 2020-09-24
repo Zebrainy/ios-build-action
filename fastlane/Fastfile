@@ -40,7 +40,7 @@ platform :ios do
     )
     disable_targets = ENV["DISABLE_TARGETS"]&.split(/,/)
     update_code_signing_settings(
-      use_automatic_signing: false,
+      use_automatic_signing: true,
       path: ENV["PROJECT_PATH"],
       targets: disable_targets
     )
