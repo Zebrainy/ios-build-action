@@ -18,6 +18,9 @@ if [[ ! -z $P12_KEY_BASE64 && ! -z $P12_CER_BASE64 ]]; then
 else
     echo $P12_BASE64 | base64 --decode > ios-build.p12
 fi
+
+echo $ADHOC_P12_BASE64 | base64 --decode > ios-build-adhoc.p12
+
 echo $MOBILEPROVISION_BASE64 | base64 --decode > ios-build.mobileprovision
 echo $ADHOC_MOBILEPROVISION_BASE64 | base64 --decode > ios-build-adhoc.mobileprovision
 fastlane export_ipa
