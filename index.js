@@ -19,6 +19,9 @@ async function run() {
     process.env.ADHOC_MOBILEPROVISION_BASE64 = core.getInput(
       "mobileprovision-base64-adhoc"
     );
+    process.env.DISTR_MOBILEPROVISION_BASE64 = core.getInput(
+      "mobileprovision-base64-distribution"
+    );
     process.env.CODE_SIGNING_IDENTITY = core.getInput("code-signing-identity");
     process.env.TEAM_ID = core.getInput("team-id");
     process.env.WORKSPACE_PATH = core.getInput("workspace-path");

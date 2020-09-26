@@ -23,4 +23,5 @@ echo $ADHOC_P12_BASE64 | base64 --decode > ios-build-adhoc.p12
 
 echo $MOBILEPROVISION_BASE64 | base64 --decode > ios-build.mobileprovision
 echo $ADHOC_MOBILEPROVISION_BASE64 | base64 --decode > ios-build-adhoc.mobileprovision
+echo $DISTR_MOBILEPROVISION_BASE64 | base64 --decode > ios-build-distribution.mobileprovision
 fastlane export_ipa
