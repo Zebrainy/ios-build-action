@@ -66,9 +66,9 @@ platform :ios do
     install_provisioning_profile(
       path: "ios-build-adhoc.mobileprovision"
     )
-    install_provisioning_profile(
-      path: "ios-build-distribution.mobileprovision"
-    )
+    # install_provisioning_profile(
+    #   path: "ios-build-distribution.mobileprovision"
+    # )
 
     disable_targets = ENV["DISABLE_TARGETS"]&.split(/,/)
     update_code_signing_settings(
