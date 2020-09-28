@@ -60,12 +60,12 @@ platform :ios do
       log_output: true
     )
     
-    install_provisioning_profile(
-      path: "ios-build.mobileprovision"
-    )
-    install_provisioning_profile(
-      path: "ios-build-adhoc.mobileprovision"
-    )
+    # install_provisioning_profile(
+    #   path: "ios-build.mobileprovision"
+    # )
+    # install_provisioning_profile(
+    #   path: "ios-build-adhoc.mobileprovision"
+    # )
     install_provisioning_profile(
       path: "ios-build-distribution.mobileprovision"
     )
@@ -76,6 +76,11 @@ platform :ios do
       path: ENV["PROJECT_PATH"],
       targets: disable_targets
     )
+    # update_project_provisioning(
+    #   xcodeproj: ENV["PROJECT_PATH"],
+    #   profile: "ios-build.mobileprovision",
+    #   code_signing_identity: ENV["CODE_SIGNING_IDENTITY"]
+    # )
     update_project_provisioning(
       xcodeproj: ENV["PROJECT_PATH"],
       profile: "ios-build-distribution.mobileprovision",
