@@ -117,7 +117,8 @@ platform :ios do
         output_name: File.basename(ENV["OUTPUT_PATH"]),
         clean: true,
         export_method: ENV["EXPORT_METHOD"],
-        export_options: ENV["EXPORT_OPTIONS"]
+        export_options: ENV["EXPORT_OPTIONS"],
+        export_path: ENV["EXPORT_PATH"]
       )
     else
       build_app(
@@ -128,7 +129,8 @@ platform :ios do
         output_name: File.basename(ENV["OUTPUT_PATH"]),
         clean: true,
         export_method: ENV["EXPORT_METHOD"],
-        export_options: ENV["EXPORT_OPTIONS"]
+        export_options: ENV["EXPORT_OPTIONS"],
+        export_path: ENV["EXPORT_PATH"]
       )
     end
     delete_keychain(

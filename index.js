@@ -32,8 +32,7 @@ async function run() {
     process.env.SCHEME = core.getInput("scheme");
     process.env.DISABLE_TARGETS = core.getInput("disable-targets");
     process.env.EXPORT_OPTIONS = core.getInput("export-options");
-    process.env.FASTLANE_USER = core.getInput("apple-dev-user");
-    process.env.FASTLANE_PASSWORD = core.getInput("apple-dev-password");
+    process.env.EXPORT_PATH = core.getInput("export-path");
     await exec.exec(`bash ${__dirname}/build.sh`);
   } catch (error) {
     core.setFailed(error.message);

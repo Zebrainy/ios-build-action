@@ -13,9 +13,18 @@ inputs:
   p12-base64:
     description: "Base64 encoded p12 file (key + cert)"
     required: false
+  p12-base64-adhoc:
+    description: "Base64 encoded p12 adhoc file (key + cert)"
+    required: false
   mobileprovision-base64:
     description: "Base64 encoded mobileprovision file"
     required: true
+  mobileprovision-base64-adhoc:
+     description: "Base64 encoded mobileprovision ad hoc"
+     required: true
+  mobileprovision-base64-distribution:
+     description: "Base64 encoded mobileprovision distribution"
+     required: true
   code-signing-identity:
     description: "For example, iOS Distribution"
     required: true
@@ -54,6 +63,10 @@ inputs:
     description: "Exports additional options from file by path"
     required: false
     default: ""
+  export-path:
+    description: "path for exported ipa"
+    required: false
+    default: "."
 runs:
   using: "node12"
   main: "index.js"
