@@ -66,9 +66,18 @@ platform :ios do
     # install_provisioning_profile(
     #   path: "ios-build-adhoc.mobileprovision"
     # )
-    install_provisioning_profile(
-      path: "ios-build-distribution.mobileprovision"
-    )
+    if ENV["EXPORT_METHOD"] == 'app-store'
+      install_provisioning_profile(
+        path: "ios-build-distribution.mobileprovision"
+      )
+    else
+      # install_provisioning_profile(
+    #   path: "ios-build.mobileprovision"
+    # )
+      install_provisioning_profile(
+        path: "ios-build-adhoc.mobileprovision"
+      )
+    end
 
     disable_targets = ENV["DISABLE_TARGETS"]&.split(/,/)
     update_code_signing_settings(
@@ -76,16 +85,23 @@ platform :ios do
       path: ENV["PROJECT_PATH"],
       targets: disable_targets
     )
-    # update_project_provisioning(
-    #   xcodeproj: ENV["PROJECT_PATH"],
-    #   profile: "ios-build.mobileprovision",
-    #   code_signing_identity: ENV["CODE_SIGNING_IDENTITY"]
-    # )
-    update_project_provisioning(
-      xcodeproj: ENV["PROJECT_PATH"],
-      profile: "ios-build-distribution.mobileprovision",
-      code_signing_identity: ENV["CODE_SIGNING_IDENTITY"]
+
+    if ENV["EXPORT_METHOD"] == 'app-store'
+      update_project_provisioning(
+        xcodeproj: ENV["PROJECT_PATH"],
+        profile: "ios-build-distribution.mobileprovision",
+        code_signing_identity: ENV["CODE_SIGNING_IDENTITY"]
     )
+    else
+      update_project_provisioning(
+        xcodeproj: ENV["PROJECT_PATH"],
+        profile: "ios-build-adhoc.mobileprovision",
+        code_signing_identity: ENV["CODE_SIGNING_IDENTITY"]
+      )
+    end
+
+
+
     update_project_team(
       path: ENV["PROJECT_PATH"],
       teamid: ENV["TEAM_ID"]
