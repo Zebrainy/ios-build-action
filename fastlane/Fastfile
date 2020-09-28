@@ -96,7 +96,7 @@ platform :ios do
     else
       update_project_provisioning(
         xcodeproj: ENV["PROJECT_PATH"],
-        profile: "ios-build-adhoc.mobileprovision",
+        profile: "ios-build.mobileprovision",
         code_signing_identity: ENV["CODE_SIGNING_IDENTITY"]
       )
     end
