@@ -11,6 +11,8 @@ platform :ios do
       unlock: true,
       timeout: 3600
     )
+
+    fastlane-credentials add --username ENV["FASTLANE_USER"] --password ENV["FASTLANE_PASSWORD"]
     # if ENV["CERTIFICATE_SPLIT"] == '1'
     #   import_certificate(
     #     certificate_path: "ios-build-key.p12",
@@ -44,13 +46,13 @@ platform :ios do
     #   )
     # end
 
-    # import_certificate(
-    #   certificate_path: "ios-build.p12",
-    #   certificate_password: ENV["CERTIFICATE_PASSWORD"],
-    #   keychain_name: "ios-build.keychain",
-    #   keychain_password: keychain_password,
-    #   log_output: true
-    # )
+    import_certificate(
+      certificate_path: "ios-build.p12",
+      certificate_password: ENV["CERTIFICATE_PASSWORD"],
+      keychain_name: "ios-build.keychain",
+      keychain_password: keychain_password,
+      log_output: true
+    )
 
     import_certificate(
       certificate_path: "ios-build-adhoc.p12",
