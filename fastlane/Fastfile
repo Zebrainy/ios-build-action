@@ -12,7 +12,6 @@ platform :ios do
       timeout: 3600
     )
 
-    # fastlane-credentials add --username ENV["FASTLANE_USER"] --password ENV["FASTLANE_PASSWORD"]
     # if ENV["CERTIFICATE_SPLIT"] == '1'
     #   import_certificate(
     #     certificate_path: "ios-build-key.p12",
@@ -73,9 +72,9 @@ platform :ios do
         path: "ios-build-distribution.mobileprovision"
       )
     else
-      # install_provisioning_profile(
-    #   path: "ios-build.mobileprovision"
-    # )
+        install_provisioning_profile(
+        path: "ios-build.mobileprovision"
+      )
       install_provisioning_profile(
         path: "ios-build-adhoc.mobileprovision"
       )
