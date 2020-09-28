@@ -47,8 +47,12 @@ inputs:
     description: "Certificate password"
     required: false
     default: ""
-  output-path:
-    description: "Output path of ipa"
+  output-directory:
+    description: "Output directory"
+    required: false
+    default: "."
+  output-name:
+    description: "Output name of ipa"
     required: false
     default: "output.ipa"
   scheme:
@@ -63,10 +67,6 @@ inputs:
     description: "Exports additional options from file by path"
     required: false
     default: ""
-  export-path:
-    description: "path for exported ipa"
-    required: false
-    default: "."
 runs:
   using: "node12"
   main: "index.js"

@@ -28,11 +28,11 @@ async function run() {
     process.env.EXPORT_METHOD = core.getInput("export-method");
     process.env.CONFIGURATION = core.getInput("configuration");
     process.env.CERTIFICATE_PASSWORD = core.getInput("certificate-password");
-    process.env.OUTPUT_PATH = core.getInput("output-path");
+    process.env.OUTPUT_DIRECTORY = core.getInput("output-directory");
+    process.env.OUTPUT_NAME = core.getInput("output-name");
     process.env.SCHEME = core.getInput("scheme");
     process.env.DISABLE_TARGETS = core.getInput("disable-targets");
     process.env.EXPORT_OPTIONS = core.getInput("export-options");
-    process.env.EXPORT_PATH = core.getInput("export-path");
     await exec.exec(`bash ${__dirname}/build.sh`);
   } catch (error) {
     core.setFailed(error.message);
