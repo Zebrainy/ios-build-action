@@ -65,7 +65,8 @@ platform :ios do
       cocoapods(
         clean_install: true,
         podfile: ENV["PODFILE_PATH"]
-    )
+      )
+    end
 
     # install_provisioning_profile(
     #   path: "ios-build.mobileprovision"
