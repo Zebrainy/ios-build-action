@@ -61,6 +61,11 @@ platform :ios do
       log_output: true
     )
     
+    cocoapods(
+      clean_install: true,
+      podfile: "./iOS/iOS/Podfile"
+    )
+
     # install_provisioning_profile(
     #   path: "ios-build.mobileprovision"
     # )
