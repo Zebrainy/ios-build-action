@@ -61,9 +61,10 @@ platform :ios do
       log_output: true
     )
     
-    cocoapods(
-      clean_install: true,
-      podfile: "./iOS/iOS/Podfile"
+    if ENV["PODFILE_PATH"] != ""
+      cocoapods(
+        clean_install: true,
+        podfile: ENV["PODFILE_PATH"]
     )
 
     # install_provisioning_profile(
