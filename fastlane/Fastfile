@@ -145,7 +145,6 @@ platform :ios do
         api_token:ENV["CRASHLYTICS_API_TOKEN"],
         gsp_path: ENV["CRASHLYTICS_GSP_PATH"],
         app_id: ENV["CRASHLYTICS_APP_ID"],
-        binary_path: ENV["CRASHLYTICS_BINARY_PATH"],
         platform: "ios",
         debug: ENV["CRASHLYTICS_DEBUG"],
       )
