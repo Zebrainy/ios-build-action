@@ -99,6 +99,10 @@ inputs:
     description: "Enable debug mode for upload-symbols"
     required: false
     default: ""
+  archive_path:
+    description: "The path to the created archive"
+    required: false
+    default: ""
 
 runs:
   using: "node12"

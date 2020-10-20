@@ -34,6 +34,7 @@ async function run() {
     process.env.DISABLE_TARGETS = core.getInput("disable-targets");
     process.env.EXPORT_OPTIONS = core.getInput("export-options");
     process.env.PODFILE_PATH = core.getInput("podfile-path");
+    process.env.ARCHIVE_PATH = core.getInput("archive_path");
 
     //-------upload_symbols_to_crashlytics params---------------
     process.env.CRASHLYTICS_DSYM_PATH = core.getInput("upload-dsym-to-crashlytics");

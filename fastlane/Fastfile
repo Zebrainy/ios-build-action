@@ -122,7 +122,8 @@ platform :ios do
         output_name: ENV["OUTPUT_NAME"],
         clean: true,
         export_method: ENV["EXPORT_METHOD"],
-        export_options: ENV["EXPORT_OPTIONS"]
+        export_options: ENV["EXPORT_OPTIONS"],
+        archive_path: ENV["ARCHIVE_PATH"]
       )
     else
       build_app(
@@ -133,7 +134,8 @@ platform :ios do
         output_name: ENV["OUTPUT_NAME"],
         clean: true,
         export_method: ENV["EXPORT_METHOD"],
-        export_options: ENV["EXPORT_OPTIONS"]
+        export_options: ENV["EXPORT_OPTIONS"],
+        archive_path: ENV["ARCHIVE_PATH"]
       )
     end
 
