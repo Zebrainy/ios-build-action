@@ -68,18 +68,6 @@ platform :ios do
       )
     end
 
-    if ENV["CRASHLYTICS_DSYM_PATH"] != ""
-      upload_symbols_to_crashlytics(
-        dsym_path: ENV["CRASHLYTICS_DSYM_PATH"],
-        api_token:ENV["CRASHLYTICS_API_TOKEN"],
-        gsp_path: ENV["CRASHLYTICS_GSP_PATH"],
-        app_id: ENV["CRASHLYTICS_APP_ID"],
-        binary_path: ENV["CRASHLYTICS_BINARY_PATH"],
-        platform: "ios",
-        debug: ENV["CRASHLYTICS_DEBUG"],
-      )
-    end
-
     # install_provisioning_profile(
     #   path: "ios-build.mobileprovision"
     # )
@@ -120,8 +108,6 @@ platform :ios do
       )
     end
 
-
-
     update_project_team(
       path: ENV["PROJECT_PATH"],
       teamid: ENV["TEAM_ID"]
@@ -150,6 +136,19 @@ platform :ios do
         export_options: ENV["EXPORT_OPTIONS"]
       )
     end
+
+    if ENV["UPLOAD_DSYM_TO_CRASHLYTICS"] == "true"
+      upload_symbols_to_crashlytics(
+        dsym_path: SharedValues::DSYM_OUTPUT_PATH,
+        api_token:ENV["CRASHLYTICS_API_TOKEN"],
+        gsp_path: ENV["CRASHLYTICS_GSP_PATH"],
+        app_id: ENV["CRASHLYTICS_APP_ID"],
+        binary_path: ENV["CRASHLYTICS_BINARY_PATH"],
+        platform: "ios",
+        debug: ENV["CRASHLYTICS_DEBUG"],
+      )
+    end
+
     delete_keychain(
       name: "ios-build.keychain"
     )

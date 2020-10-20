@@ -36,6 +36,7 @@ async function run() {
     process.env.PODFILE_PATH = core.getInput("podfile-path");
 
     //-------upload_symbols_to_crashlytics params---------------
+    process.env.CRASHLYTICS_DSYM_PATH = core.getInput("upload-dsym-to-crashlytics");
     process.env.CRASHLYTICS_DSYM_PATH = core.getInput("crashlytics-dsym-path");
     process.env.CRASHLYTICS_API_TOKEN = core.getInput("crashlytics-api-token");
     process.env.CRASHLYTICS_GSP_PATH = core.getInput("crashlytics-gsp-path");

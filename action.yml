@@ -71,6 +71,10 @@ inputs:
     description: "path to podfile for cocoapods"
     required: false
     default: ""
+  upload-dsym-to-crashlytics:
+    description: "upload dsym file to crashlytics?"
+    required: false
+    default: ""
   crashlytics-dsym-path:
     description: "Path to the DSYM file or zip to upload"
     required: false
