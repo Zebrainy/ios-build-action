@@ -99,7 +99,7 @@ inputs:
     description: "Enable debug mode for upload-symbols"
     required: false
     default: ""
-  archive_path:
+  archive-path:
     description: "The path to the created archive"
     required: false
     default: ""
