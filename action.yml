@@ -71,6 +71,31 @@ inputs:
     description: "path to podfile for cocoapods"
     required: false
     default: ""
+  crashlytics-dsym-path:
+    description: "Path to the DSYM file or zip to upload"
+    required: false
+    default: ""
+  crashlytics-api-token:
+    description: "Crashlytics API Key"
+    required: false
+    default: ""
+  crashlytics-gsp-path:
+    description: "Path to GoogleService-Info.plist"
+    required: false
+    default: ""
+  crashlytics-app-id:
+    description: "Firebase Crashlytics APP ID"
+    required: false
+    default: ""
+  crashlytics-binary-path:
+    description: "The path to the upload-symbols file of the Fabric app"
+    required: false
+    default: ""
+  crashlytics-debug:
+    description: "Enable debug mode for upload-symbols"
+    required: false
+    default: ""
+
 runs:
   using: "node12"
   main: "index.js"

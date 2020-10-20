@@ -34,6 +34,15 @@ async function run() {
     process.env.DISABLE_TARGETS = core.getInput("disable-targets");
     process.env.EXPORT_OPTIONS = core.getInput("export-options");
     process.env.PODFILE_PATH = core.getInput("podfile-path");
+
+    //-------upload_symbols_to_crashlytics params---------------
+    process.env.CRASHLYTICS_DSYM_PATH = core.getInput("crashlytics-dsym-path");
+    process.env.CRASHLYTICS_API_TOKEN = core.getInput("crashlytics-api-token");
+    process.env.CRASHLYTICS_GSP_PATH = core.getInput("crashlytics-gsp-path");
+    process.env.CRASHLYTICS_APP_ID = core.getInput("crashlytics-app-id");
+    process.env.CRASHLYTICS_BINARY_PATH = core.getInput("crashlytics-binary-path");
+    process.env.CRASHLYTICS_DEBUG = core.getInput("crashlytics-debug");
+
     await exec.exec(`bash ${__dirname}/build.sh`);
   } catch (error) {
     core.setFailed(error.message);
