@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+apt install lib32stdc++6 -y
+
 if ! type fastlane > /dev/null 2>&1; then
   if type brew > /dev/null 2>&1; then
     brew install fastlane
