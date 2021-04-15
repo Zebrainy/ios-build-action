@@ -25,6 +25,26 @@ inputs:
   mobileprovision-base64-distribution:
      description: "Base64 encoded mobileprovision distribution"
      required: true
+  #---MoEngage---
+  mobileprovision-base64-MoENotificationServiceExtension-dev:
+     description: "Base64 MoENotificationServiceExtension dev"
+     required: true
+  mobileprovision-base64-MoENotificationServiceExtension-adhoc:
+     description: "Base64 MoENotificationServiceExtension adhoc"
+     required: true
+  mobileprovision-base64-MoENotificationServiceExtension-store:
+     description: "Base64 MoENotificationServiceExtension store"
+     required: true
+  mobileprovision-base64-MoEPushTemplateExtension-dev:
+     description: "Base64 MoEPushTemplateExtension dev"
+     required: true
+  mobileprovision-base64-MoEPushTemplateExtension-adhoc:
+     description: "Base64 MoEPushTemplateExtension adhoc"
+     required: true
+  mobileprovision-base64-MoEPushTemplateExtension-store:
+     description: "Base64 MoEPushTemplateExtension store"
+     required: true
+  #-------------
   code-signing-identity:
     description: "For example, iOS Distribution"
     required: true
