@@ -36,16 +36,16 @@ platform :ios do
     end
 
     if ENV["EXPORT_METHOD"] == 'app-store'
-      install_provisioning_profile(path: "ios-build-distribution.mobileprovision")
-      install_provisioning_profile(path: "MoENotificationServiceExtension_store.mobileprovision")
-      install_provisioning_profile(path: "MoEPushTemplateExtension_store.mobileprovision")      
+      install_provisioning_profile(
+        path: "ios-build-distribution.mobileprovision"
+      )
     else
-      install_provisioning_profile(path: "ios-build.mobileprovision")
-      install_provisioning_profile(path: "ios-build-adhoc.mobileprovision")
-      install_provisioning_profile(path: "MoENotificationServiceExtension_dev.mobileprovision")
-      install_provisioning_profile(path: "MoENotificationServiceExtension_adhoc.mobileprovision")
-      install_provisioning_profile(path: "MoEPushTemplateExtension_dev.mobileprovision")
-      install_provisioning_profile(path: "MoEPushTemplateExtension_adhoc.mobileprovision")
+        install_provisioning_profile(
+        path: "ios-build.mobileprovision"
+      )
+      install_provisioning_profile(
+        path: "ios-build-adhoc.mobileprovision"
+      )
     end
 
     disable_targets = ENV["DISABLE_TARGETS"]&.split(/,/)
@@ -60,18 +60,6 @@ platform :ios do
         xcodeproj: ENV["PROJECT_PATH"],
         profile: "ios-build-distribution.mobileprovision",
         code_signing_identity: ENV["CODE_SIGNING_IDENTITY"]
-
-        update_project_provisioning(
-        xcodeproj: ENV["PROJECT_PATH"],
-        target_filter: ".*MoENotificationServiceExtension.*",
-        profile: "MoENotificationServiceExtension_store.mobileprovision",
-        code_signing_identity: ENV["CODE_SIGNING_IDENTITY"]
-
-        update_project_provisioning(
-        xcodeproj: ENV["PROJECT_PATH"],
-        target_filter: ".*MoEPushTemplateExtension.*",
-        profile: "MoEPushTemplateExtension_store.mobileprovision",
-        code_signing_identity: ENV["CODE_SIGNING_IDENTITY"]
     )
     else
       update_project_provisioning(
@@ -79,17 +67,6 @@ platform :ios do
         profile: "ios-build.mobileprovision",
         code_signing_identity: ENV["CODE_SIGNING_IDENTITY"]
       )
-      update_project_provisioning(
-        xcodeproj: ENV["PROJECT_PATH"],
-        target_filter: ".*MoENotificationServiceExtension.*",
-        profile: "MoENotificationServiceExtension_adhoc.mobileprovision",
-        code_signing_identity: ENV["CODE_SIGNING_IDENTITY"]
-
-        update_project_provisioning(
-        xcodeproj: ENV["PROJECT_PATH"],
-        target_filter: ".*MoEPushTemplateExtension.*",
-        profile: "MoEPushTemplateExtension_adhoc.mobileprovision",
-        code_signing_identity: ENV["CODE_SIGNING_IDENTITY"]
     end
 
     update_project_team(
