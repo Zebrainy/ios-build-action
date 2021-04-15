@@ -26,4 +26,14 @@ echo $ADHOC_P12_BASE64 | base64 --decode > ios-build-adhoc.p12
 echo $MOBILEPROVISION_BASE64 | base64 --decode > ios-build.mobileprovision
 echo $ADHOC_MOBILEPROVISION_BASE64 | base64 --decode > ios-build-adhoc.mobileprovision
 echo $DISTR_MOBILEPROVISION_BASE64 | base64 --decode > ios-build-distribution.mobileprovision
+
+#MoEngage
+echo $MOBILEPROVISION_BASE64_MoENotificationServiceExtension_DEV | base64 --decode > MoENotificationServiceExtension_dev.mobileprovision
+echo $MOBILEPROVISION_BASE64_MoENotificationServiceExtension_ADHOC | base64 --decode > MoENotificationServiceExtension_adhoc.mobileprovision
+echo $MOBILEPROVISION_BASE64_MoENotificationServiceExtension_STORE | base64 --decode > MoENotificationServiceExtension_store.mobileprovision
+
+echo $MOBILEPROVISION_BASE64_MoEPushTemplateExtension_DEV | base64 --decode > MoEPushTemplateExtension_dev.mobileprovision
+echo $MOBILEPROVISION_BASE64_MoEPushTemplateExtension_ADHOC | base64 --decode > MoEPushTemplateExtension_adhoc.mobileprovision
+echo $MOBILEPROVISION_BASE64_MoEPushTemplateExtension_STORE | base64 --decode > MoEPushTemplateExtension_store.mobileprovision
+
 fastlane export_ipa
