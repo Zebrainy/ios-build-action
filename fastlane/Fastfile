@@ -12,46 +12,13 @@ platform :ios do
       timeout: 3600
     )
 
-    # if ENV["CERTIFICATE_SPLIT"] == '1'
-    #   import_certificate(
-    #     certificate_path: "ios-build-key.p12",
-    #     certificate_password: ENV["CERTIFICATE_PASSWORD"],
-    #     keychain_name: "ios-build.keychain",
-    #     keychain_password: keychain_password,
-    #     log_output: true
-    #   )
-    #   import_certificate(
-    #     certificate_path: "ios-build-key.cer",
-    #     certificate_password: ENV["CERTIFICATE_PASSWORD"],
-    #     keychain_name: "ios-build.keychain",
-    #     keychain_password: keychain_password,
-    #     log_output: true
-    #   )
-    # else
-    #   import_certificate(
-    #     certificate_path: "ios-build.p12",
-    #     certificate_password: ENV["CERTIFICATE_PASSWORD"],
-    #     keychain_name: "ios-build.keychain",
-    #     keychain_password: keychain_password,
-    #     log_output: true
-    #   )
-
-    #   import_certificate(
-    #     certificate_path: "ios-build-adhoc.p12",
-    #     certificate_password: ENV["CERTIFICATE_PASSWORD"],
-    #     keychain_name: "ios-build.keychain",
-    #     keychain_password: keychain_password,
-    #     log_output: true
-    #   )
-    # end
-
-    import_certificate(
-      certificate_path: "ios-build.p12",
-      certificate_password: ENV["CERTIFICATE_PASSWORD"],
-      keychain_name: "ios-build.keychain",
-      keychain_password: keychain_password,
-      log_output: true
-    )
+    # import_certificate(
+    #   certificate_path: "ios-build.p12",
+    #   certificate_password: ENV["CERTIFICATE_PASSWORD"],
+    #   keychain_name: "ios-build.keychain",
+    #   keychain_password: keychain_password,
+    #   log_output: true
+    # )
 
     import_certificate(
       certificate_path: "ios-build-adhoc.p12",
@@ -68,20 +35,14 @@ platform :ios do
       )
     end
 
-    # install_provisioning_profile(
-    #   path: "ios-build.mobileprovision"
-    # )
-    # install_provisioning_profile(
-    #   path: "ios-build-adhoc.mobileprovision"
-    # )
     if ENV["EXPORT_METHOD"] == 'app-store'
       install_provisioning_profile(
         path: "ios-build-distribution.mobileprovision"
       )
     else
-        install_provisioning_profile(
-        path: "ios-build.mobileprovision"
-      )
+      #   install_provisioning_profile(
+      #   path: "ios-build.mobileprovision"
+      # )
       install_provisioning_profile(
         path: "ios-build-adhoc.mobileprovision"
       )
@@ -103,7 +64,8 @@ platform :ios do
     else
       update_project_provisioning(
         xcodeproj: ENV["PROJECT_PATH"],
-        profile: "ios-build.mobileprovision",
+        # profile: "ios-build.mobileprovision",
+        profile: "ios-build-adhoc.mobileprovision",
         code_signing_identity: ENV["CODE_SIGNING_IDENTITY"]
       )
     end
