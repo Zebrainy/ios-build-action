@@ -41,7 +41,7 @@ platform :ios do
       install_provisioning_profile(path: "MoENotificationServiceExtension_store.mobileprovision")
       install_provisioning_profile(path: "MoEPushTemplateExtension_store.mobileprovision")      
     else
-      install_provisioning_profile(path: "ios-build.mobileprovision")
+      #install_provisioning_profile(path: "ios-build.mobileprovision")
       install_provisioning_profile(path: "ios-build-adhoc.mobileprovision")
       #moengage
       install_provisioning_profile(path: "MoENotificationServiceExtension_dev.mobileprovision")
@@ -84,7 +84,8 @@ platform :ios do
     else
       update_project_provisioning(
         xcodeproj: ENV["PROJECT_PATH"],
-        profile: "ios-build.mobileprovision",
+        #profile: "ios-build.mobileprovision",
+        profile: "ios-build-adhoc.mobileprovision",
         # code_signing_identity: ENV["CODE_SIGNING_IDENTITY"])
         code_signing_identity: "iPhone Distribution")
 
