@@ -37,11 +37,13 @@ platform :ios do
 
     if ENV["EXPORT_METHOD"] == 'app-store'
       install_provisioning_profile(path: "ios-build-distribution.mobileprovision")
+      #moengage
       install_provisioning_profile(path: "MoENotificationServiceExtension_store.mobileprovision")
       install_provisioning_profile(path: "MoEPushTemplateExtension_store.mobileprovision")      
     else
       install_provisioning_profile(path: "ios-build.mobileprovision")
       install_provisioning_profile(path: "ios-build-adhoc.mobileprovision")
+      #moengage
       install_provisioning_profile(path: "MoENotificationServiceExtension_dev.mobileprovision")
       install_provisioning_profile(path: "MoENotificationServiceExtension_adhoc.mobileprovision")
       install_provisioning_profile(path: "MoEPushTemplateExtension_dev.mobileprovision")

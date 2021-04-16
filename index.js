@@ -23,12 +23,12 @@ async function run() {
       "mobileprovision-base64-distribution"
     );
     //MoEngage
-    process.env.MOBILEPROVISION_BASE64_MoENotificationServiceExtension_DEV = core.getInput("mobileprovision-base64-MoENotificationServiceExtension-dev");
-    process.env.MOBILEPROVISION_BASE64_MoENotificationServiceExtension_ADHOC = core.getInput("mobileprovision-base64-MoENotificationServiceExtension-adhoc");
-    process.env.MOBILEPROVISION_BASE64_MoENotificationServiceExtension_STORE = core.getInput("mobileprovision-base64-MoENotificationServiceExtension-store");
-    process.env.MOBILEPROVISION_BASE64_MoEPushTemplateExtension_DEV = core.getInput("mobileprovision-base64-MoEPushTemplateExtension-dev");
-    process.env.MOBILEPROVISION_BASE64_MoEPushTemplateExtension_ADHOC = core.getInput("mobileprovision-base64-MoEPushTemplateExtension-adhoc");
-    process.env.MOBILEPROVISION_BASE64_MoEPushTemplateExtension_STORE = core.getInput("mobileprovision-base64-MoEPushTemplateExtension-store");
+    // process.env.MOBILEPROVISION_BASE64_MoENotificationServiceExtension_DEV = core.getInput("mobileprovision-base64-MoENotificationServiceExtension-dev");
+    // process.env.MOBILEPROVISION_BASE64_MoENotificationServiceExtension_ADHOC = core.getInput("mobileprovision-base64-MoENotificationServiceExtension-adhoc");
+    // process.env.MOBILEPROVISION_BASE64_MoENotificationServiceExtension_STORE = core.getInput("mobileprovision-base64-MoENotificationServiceExtension-store");
+    // process.env.MOBILEPROVISION_BASE64_MoEPushTemplateExtension_DEV = core.getInput("mobileprovision-base64-MoEPushTemplateExtension-dev");
+    // process.env.MOBILEPROVISION_BASE64_MoEPushTemplateExtension_ADHOC = core.getInput("mobileprovision-base64-MoEPushTemplateExtension-adhoc");
+    // process.env.MOBILEPROVISION_BASE64_MoEPushTemplateExtension_STORE = core.getInput("mobileprovision-base64-MoEPushTemplateExtension-store");
 
     process.env.CODE_SIGNING_IDENTITY = core.getInput("code-signing-identity");
     process.env.TEAM_ID = core.getInput("team-id");
