@@ -57,6 +57,12 @@ platform :ios do
       targets: disable_targets
     )
 
+    update_code_signing_settings(
+      use_automatic_signing: false,
+      path: "Unity-iPhone.xcodeproj",
+      code_sign_identity: "iPhone Distribution"
+    )
+
     if ENV["EXPORT_METHOD"] == 'app-store'
       update_project_provisioning(
         xcodeproj: ENV["PROJECT_PATH"],
