@@ -7,12 +7,12 @@ platform :ios do
     
     projectPath = ENV["PROJECT_PATH"]
     codeSignIdentity = ENV["CODE_SIGNING_IDENTITY"]
-    provision_app_adhoc = ENV["provision-name-adhoc"]
-    provision_app_store = ENV["provision-name-store"]
-    provision_MoENotificationServiceExtension_adhoc = ENV["provision-name-MoENotificationServiceExtension-adhoc"]
-    provision_MoENotificationServiceExtension_store = ENV["provision-name-MoENotificationServiceExtension-store"]
-    provisionMoEPushTemplateExtension_adhoc = ENV["provision-name-MoEPushTemplateExtension-adhoc"]
-    provisionMoEPushTemplateExtension_store = ENV["provision-name-MoEPushTemplateExtension-store"]
+    provision_app_adhoc = ENV["PROVISION_NAME_ADHOC"]
+    provision_app_store = ENV["PROVISION_NAME_STORE"]
+    provision_MoENotificationServiceExtension_adhoc = ENV["PROVISION_NAME_MoENotificationServiceExtension_ADHOC"]
+    provision_MoENotificationServiceExtension_store = ENV["PROVISION_NAME_MoENotificationServiceExtension_STORE"]
+    provisionMoEPushTemplateExtension_adhoc = ENV["PROVISION_NAME_MoEPushTemplateExtension_ADHOC"]
+    provisionMoEPushTemplateExtension_store = ENV["PROVISION_NAME_MoEPushTemplateExtension_STORE"]
 
     create_keychain(
       name: "ios-build.keychain",
