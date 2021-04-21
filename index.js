@@ -13,16 +13,15 @@ async function run() {
     process.env.ADHOC_P12_BASE64 = core.getInput("p12-base64-adhoc");
     process.env.P12_KEY_BASE64 = core.getInput("p12-key-base64");
     process.env.P12_CER_BASE64 = core.getInput("p12-cer-base64");
-    process.env.MOBILEPROVISION_BASE64 = core.getInput(
-      "mobileprovision-base64"
-    );
-    process.env.ADHOC_MOBILEPROVISION_BASE64 = core.getInput(
-      "mobileprovision-base64-adhoc"
-    );
-    process.env.DISTR_MOBILEPROVISION_BASE64 = core.getInput(
-      "mobileprovision-base64-distribution"
-    );
+
     process.env.CODE_SIGNING_IDENTITY = core.getInput("code-signing-identity");
+    process.env.PROVISION_NAME_ADHOC = core.getInput("provision-name-adhoc");
+    process.env.PROVISION_NAME_STORE = core.getInput("provision-name-store");
+    process.env.PROVISION_NAME_MoENotificationServiceExtension_ADHOC = core.getInput("provision-name-MoENotificationServiceExtension-adhoc");
+    process.env.PROVISION_NAME_MoENotificationServiceExtension_STORE = core.getInput("provision-name-MoENotificationServiceExtension-store");
+    process.env.PROVISION_NAME_MoEPushTemplateExtension_ADHOC = core.getInput("provision-name-MoEPushTemplateExtension-adhoc");
+    process.env.PROVISION_NAME_MoEPushTemplateExtension_STORE = core.getInput("provision-name-MoEPushTemplateExtension-store");
+
     process.env.TEAM_ID = core.getInput("team-id");
     process.env.WORKSPACE_PATH = core.getInput("workspace-path");
     process.env.EXPORT_METHOD = core.getInput("export-method");

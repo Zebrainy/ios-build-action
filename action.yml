@@ -16,15 +16,26 @@ inputs:
   p12-base64-adhoc:
     description: "Base64 encoded p12 adhoc file (key + cert)"
     required: false
-  mobileprovision-base64:
-    description: "Base64 encoded mobileprovision file"
-    required: true
-  mobileprovision-base64-adhoc:
-     description: "Base64 encoded mobileprovision ad hoc"
+  provision-name-adhoc:
+     description: provision name ad hoc"
      required: true
-  mobileprovision-base64-distribution:
-     description: "Base64 encoded mobileprovision distribution"
+  provision-name-store:
+     description: "provision name store"
      required: true
+  #---MoEngage---
+  provision-name-MoENotificationServiceExtension-adhoc:
+     description: "provision name MoENotificationServiceExtension adhoc"
+     required: true
+  provision-name-MoENotificationServiceExtension-store:
+     description: "provision name MoENotificationServiceExtension store"
+     required: true
+  provision-name-MoEPushTemplateExtension-adhoc:
+     description: "provision name MoEPushTemplateExtension adhoc"
+     required: true
+  provision-name-MoEPushTemplateExtension-store:
+     description: "provision name MoEPushTemplateExtension store"
+     required: true
+  #-------------
   code-signing-identity:
     description: "For example, iOS Distribution"
     required: true
