@@ -47,14 +47,30 @@ platform :ios do
       install_provisioning_profile(path: provisionMoEPushTemplateExtension_adhoc)
     end
 
+      update_targets = nil
+    if !ENV['UPDATE_TARGETS'].empty?
+      update_targets = ENV['UPDATE_TARGETS'].split(/,/)
+    end
+      disable_targets = nil
+    if !ENV['DISABLE_TARGETS'].empty?
+      disable_targets = ENV['DISABLE_TARGETS'].split(/,/)
+    end
+
+    update_code_signing_settings(
+      use_automatic_signing: true,
+      path: projectPath,
+      targets: disable_targets)
+
     update_code_signing_settings(
       use_automatic_signing: false,
       path: projectPath,
-      code_sign_identity: codeSignIdentity)
+      code_sign_identity: codeSignIdentity,
+      targets: update_targets)
 
     if ENV["EXPORT_METHOD"] == 'app-store'
       update_project_provisioning(
         xcodeproj: projectPath,
+        target_filter: "Unity-iPhone",
         profile: provision_app_store,
         code_signing_identity: codeSignIdentity)
 
@@ -73,6 +89,7 @@ platform :ios do
     else
       update_project_provisioning(
         xcodeproj: projectPath,
+        target_filter: "Unity-iPhone",
         profile: provision_app_adhoc,
         code_signing_identity: codeSignIdentity)
 
@@ -91,7 +108,8 @@ platform :ios do
 
     update_project_team(
       path: ENV["PROJECT_PATH"],
-      teamid: ENV["TEAM_ID"]
+      teamid: ENV["TEAM_ID"],
+      targets: disable_targets
     )
     
     if ENV["WORKSPACE_PATH"] != ""
