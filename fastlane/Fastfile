@@ -9,10 +9,6 @@ platform :ios do
     codeSignIdentity = ENV["CODE_SIGNING_IDENTITY"]
     provision_app_adhoc = ENV["PROVISION_NAME_ADHOC"]
     provision_app_store = ENV["PROVISION_NAME_STORE"]
-    provision_MoENotificationServiceExtension_adhoc = ENV["PROVISION_NAME_MoENotificationServiceExtension_ADHOC"]
-    provision_MoENotificationServiceExtension_store = ENV["PROVISION_NAME_MoENotificationServiceExtension_STORE"]
-    provisionMoEPushTemplateExtension_adhoc = ENV["PROVISION_NAME_MoEPushTemplateExtension_ADHOC"]
-    provisionMoEPushTemplateExtension_store = ENV["PROVISION_NAME_MoEPushTemplateExtension_STORE"]
 
     create_keychain(
       name: "ios-build.keychain",
@@ -38,13 +34,9 @@ platform :ios do
     end
 
     if ENV["EXPORT_METHOD"] == 'app-store'
-      install_provisioning_profile(path: provision_app_store)
-      install_provisioning_profile(path: provision_MoENotificationServiceExtension_store)
-      install_provisioning_profile(path: provisionMoEPushTemplateExtension_store)      
+      install_provisioning_profile(path: provision_app_store) 
     else
       install_provisioning_profile(path: provision_app_adhoc)
-      install_provisioning_profile(path: provision_MoENotificationServiceExtension_adhoc)
-      install_provisioning_profile(path: provisionMoEPushTemplateExtension_adhoc)
     end
 
       update_targets = nil
@@ -72,37 +64,12 @@ platform :ios do
         xcodeproj: projectPath,
         target_filter: "Unity-iPhone",
         profile: provision_app_store,
-        code_signing_identity: codeSignIdentity)
-
-      update_project_provisioning(
-        xcodeproj: projectPath,
-        target_filter: ".*MoENotificationServiceExtension.*",
-        profile: provision_MoENotificationServiceExtension_store,
-        code_signing_identity: codeSignIdentity)
-
-      update_project_provisioning(
-        xcodeproj: projectPath,
-        target_filter: ".*MoEPushTemplateExtension.*",
-        profile: provisionMoEPushTemplateExtension_store,
-        code_signing_identity: codeSignIdentity)
-    
+        code_signing_identity: codeSignIdentity)   
     else
       update_project_provisioning(
         xcodeproj: projectPath,
         target_filter: "Unity-iPhone",
         profile: provision_app_adhoc,
-        code_signing_identity: codeSignIdentity)
-
-      update_project_provisioning(
-        xcodeproj: projectPath,
-        target_filter: ".*MoENotificationServiceExtension.*",
-        profile: provision_MoENotificationServiceExtension_adhoc,
-        code_signing_identity: codeSignIdentity)
-
-      update_project_provisioning(
-        xcodeproj: projectPath,
-        target_filter: ".*MoEPushTemplateExtension.*",
-        profile: provisionMoEPushTemplateExtension_adhoc,
         code_signing_identity: codeSignIdentity)
     end
 
