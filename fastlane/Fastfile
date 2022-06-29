@@ -78,6 +78,12 @@ platform :ios do
       teamid: ENV["TEAM_ID"],
       targets: disable_targets
     )
+
+    update_project_team(
+      path: ENV["PROJECT_PATH"],
+      teamid: ENV["TEAM_ID"],
+      targets: update_targets
+    )
     
     if ENV["WORKSPACE_PATH"] != ""
       build_app(
