@@ -12,7 +12,7 @@ platform :ios do
 
     create_keychain(
       name: "ios-build.keychain",
-      password: "",
+      password: keychain_password,
       default_keychain: false,
       unlock: true,
       timeout: 3600
