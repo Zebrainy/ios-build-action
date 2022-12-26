@@ -104,6 +104,14 @@ inputs:
     description: "The path to the created archive"
     required: false
     default: ""
+  keychain-use-password:
+    description: "Whether to set a password to keychain"
+    required: false
+    default: true
+  keychain-set-default:
+    description: "Use created keychain as default"
+    required: false
+    default: true
 
 runs:
   using: "node12"

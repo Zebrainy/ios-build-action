@@ -3,17 +3,19 @@ default_platform(:ios)
 platform :ios do
   desc "Export ipa"
   lane :export_ipa do
-    keychain_password = SecureRandom.uuid
     
     projectPath = ENV["PROJECT_PATH"]
     codeSignIdentity = ENV["CODE_SIGNING_IDENTITY"]
     provision_app_adhoc = ENV["PROVISION_NAME_ADHOC"]
     provision_app_store = ENV["PROVISION_NAME_STORE"]
 
+    keychain_password = ENV["KEYCHAIN_USE_PASSWORD"] == "true" ? SecureRandom.uuid : ""
+    is_default_keychain = ENV["KEYCHAIN_SET_DEFAULT"] == "true"
+
     create_keychain(
       name: "ios-build.keychain",
       password: keychain_password,
-      default_keychain: false,
+      default_keychain: is_default_keychain,
       unlock: true,
       timeout: 3600
     )

@@ -40,6 +40,8 @@ async function run() {
     process.env.CRASHLYTICS_APP_ID = core.getInput("crashlytics-app-id");
     process.env.CRASHLYTICS_BINARY_PATH = core.getInput("crashlytics-binary-path");
     process.env.CRASHLYTICS_DEBUG = core.getInput("crashlytics-debug");
+    process.env.KEYCHAIN_USE_PASSWORD = core.getInput("keychain-use-password");
+    process.env.KEYCHAIN_SET_DEFAULT = core.getInput("keychain-set-default");
 
     await exec.exec(`bash ${__dirname}/build.sh`);
   } catch (error) {
