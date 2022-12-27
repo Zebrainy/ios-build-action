@@ -112,6 +112,10 @@ inputs:
     description: "Use created keychain as default"
     required: false
     default: true
+  clear-xcode-derived-data:
+    description: "Clear xcode derived data after build"
+    required: false
+    default: false
 
 runs:
   using: "node12"

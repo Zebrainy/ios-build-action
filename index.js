@@ -42,6 +42,7 @@ async function run() {
     process.env.CRASHLYTICS_DEBUG = core.getInput("crashlytics-debug");
     process.env.KEYCHAIN_USE_PASSWORD = core.getInput("keychain-use-password");
     process.env.KEYCHAIN_SET_DEFAULT = core.getInput("keychain-set-default");
+    process.env.CLEAR_XCODE_DERIVED_DATA = core.getInput("clear-xcode-derived-data");
 
     await exec.exec(`bash ${__dirname}/build.sh`);
   } catch (error) {

@@ -124,6 +124,10 @@ platform :ios do
       )
     end
 
+    if ENV["CLEAR_XCODE_DERIVED_DATA"] == "true"
+      clear_derived_data
+    end
+
     delete_keychain(
       name: "ios-build.keychain"
     )
